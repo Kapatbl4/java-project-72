@@ -1,4 +1,4 @@
 package java.hexlet.code;
 
-public class App {
+public class AppTest {
 }
