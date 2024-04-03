@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c055ccfd-cd1b-4fd9-9c6d-171c3a28f217" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/java-project-72.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/checkstyle/checkstyle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/controllers/RootController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/controllers/UrlController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/dto/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/dto/ListOfUrlsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/dto/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/dto/UrlPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/model/Url.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/model/UrlCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/repository/UrlCheckRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/repository/UrlsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/util/NamedRoutes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/jte/.jteroot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/jte/ListOfUrls.jte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/jte/MainPage.jte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/jte/UrlInfo.jte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/jte/layout/page.jte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/Schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,27 +60,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Gradle.AppTest.executor": "Run",
-    "Gradle.AppTest.testMainPage.executor": "Run",
-    "Gradle.Build app.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.TestCreateUrl.testCreateCorrectUrl.executor": "Run",
-    "Gradle.TestCreateUrl.testCreateIncorrectUrl.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu-20.04/home/kapatbl4/HexletJavalin",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.AppTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AppTest.testMainPage.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build app.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestCreateUrl.testCreateCorrectUrl.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestCreateUrl.testCreateIncorrectUrl.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-20.04/home/kapatbl4/HexletJavalin&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu-20.04\home\kapatbl4\java-project-72\app\src\main\resources\Templates" />
