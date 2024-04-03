@@ -49,7 +49,7 @@ bin/
 build
 
 *.class
-jte-classes
+app/jte-classes
 *.settings
 .factorypath
 bin
