@@ -81,7 +81,7 @@ public class UrlController {
             int statusCode = response.getStatus();
             Document page = Jsoup.parse(response.getBody());
             String title = page.title();
-            String h1 = page.selectFirst("h1") == null ? "" : Objects.requireNonNull(page.selectFirst("h1")).toString();
+            String h1 = page.selectFirst("h1") == null ? "" : Objects.requireNonNull(page.selectFirst("h1")).text();
             String description = page.select("meta[name=description]").get(0).attr("content");
 
             UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description);
