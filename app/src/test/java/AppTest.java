@@ -102,7 +102,10 @@ public class AppTest {
             String mockUrl = mockServer.url("/").toString();
             Url url = new Url(mockUrl);
             UrlsRepository.save(url);
+
             var response = client.post("/urls/" + url.getId() +"/checks").body().string();
+//            System.out.println("post response: " + response);
+
             assertThat(response).contains("Test is successful");
             mockServer.shutdown();
         });
