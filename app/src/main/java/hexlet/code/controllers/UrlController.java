@@ -24,20 +24,21 @@ import java.util.List;
 import java.util.Objects;
 
 public class UrlController {
-    public static void createUrl(Context context) throws MalformedURLException, SQLException {
+    public static void createUrl(Context context) throws SQLException {
         String name = context.formParam("url");
+        String correctedName;
 
         try {
-            assert name != null;
             URI uri = new URI(name);
             URL url = uri.toURL();
+            correctedName = url.getProtocol() + "://" + url.getAuthority();
         } catch (Exception e) {
             context.sessionAttribute("flash", "Некорректный URL");
             context.sessionAttribute("flashType", "danger");
             context.redirect(NamedRoutes.rootPath());
             return;
         }
-        String correctedName = correctUrlFormat(name);
+
         if (UrlsRepository.findByName(correctedName).isEmpty()) {
             UrlsRepository.save(new Url(correctedName));
             context.sessionAttribute("flash", "Страница успешно добавлена");
@@ -78,8 +79,9 @@ public class UrlController {
 
         try {
             HttpResponse<String> response = Unirest.get(url.getName()).asString();
-            int statusCode = response.getStatus();
             Document page = Jsoup.parse(response.getBody());
+
+            int statusCode = response.getStatus();
             String title = page.title();
             String h1 = page.selectFirst("h1") == null ? "" :
                     Objects.requireNonNull(page.selectFirst("h1")).text();
@@ -98,14 +100,14 @@ public class UrlController {
         context.redirect(NamedRoutes.urlPath(id));
     }
 
-    private static String correctUrlFormat(String name) throws MalformedURLException {
-        URL url = null;
-        try {
-            url = new URI(name).toURL();
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-        String port = url.getPort() == -1 ? "" : ":" + url.getPort();
-        return url.getProtocol() + "://" + url.getHost() + port;
-    }
+//    private static String correctUrlFormat(String name) throws MalformedURLException {
+//        URL url = null;
+//        try {
+//            url = new URI(name).toURL();
+//        } catch (URISyntaxException e) {
+//            throw new RuntimeException(e);
+//        }
+//        String port = url.getPort() == -1 ? "" : ":" + url.getPort();
+//        return url.getProtocol() + "://" + url.getHost() + port;
+//    }
 }
