@@ -40,7 +40,7 @@ public class AppTest {
         JavalinTest.test(app, (server, client) -> {
             var response = client.get("/");
             assertThat(response.code()).isEqualTo(200);
-            assertThat(response.body().string()).contains("���������� �������");
+            assertThat(response.body().string()).contains("Анализатор страниц");
         });
     }
 
@@ -54,7 +54,7 @@ public class AppTest {
                 var response = client.post("/urls", requestBody);
                 assertThat(response.code()).isEqualTo(200);
                 assertThat(response.body().string()).contains("yandex.ru");
-//                assertThat(response.body().string()).contains("�������� ������� ���������");
+//                assertThat(response.body().string()).contains("???????? ??????? ?????????");
             });
         }
 
@@ -73,8 +73,8 @@ public class AppTest {
                 var requestBody = "url=http://yandex.ru";
                 var response = client.post("/urls", requestBody);
                 assertThat(response.code()).isEqualTo(200);
-                assertThat(response.body().string()).contains("�����");
-                assertThat(client.post("/urls", requestBody).body().string()).contains("��������� ���������� ����� �� SEO �����������");
+                assertThat(response.body().string()).contains("?????");
+                assertThat(client.post("/urls", requestBody).body().string()).contains("Бесплатно проверяйте сайты на SEO пригодность");
             });
         }
     }
@@ -96,7 +96,7 @@ public class AppTest {
             client.post("/urls", "url=http://yandex.ru");
             var response = client.get("/urls/1");
             assertThat(response.code()).isEqualTo(200);
-            assertThat(response.body().string()).contains("yandex.ru", "��������");
+            assertThat(response.body().string()).contains("yandex.ru", "Проверки");
         });
     }
 

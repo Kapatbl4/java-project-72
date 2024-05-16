@@ -14,9 +14,7 @@ import kong.unirest.Unirest;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -52,10 +50,11 @@ public class UrlController {
     }
 
     public static void listUrls(Context context) throws SQLException {
-        var page = new ListOfUrlsPage();
+        List<Url> urlsList = UrlsRepository.getEntities();
+        var page = new ListOfUrlsPage(urlsList);
         page.setFlash(context.consumeSessionAttribute("flash"));
         page.setFlashType(context.consumeSessionAttribute("flashType"));
-        page.setUrlsList();
+        page.setUrlsList(urlsList);
         context.render("ListOfUrls.jte", Collections.singletonMap("page", page));
     }
 
@@ -83,8 +82,8 @@ public class UrlController {
 
             int statusCode = response.getStatus();
             String title = page.title();
-            String h1 = page.selectFirst("h1") == null ? "" :
-                    Objects.requireNonNull(page.selectFirst("h1")).text();
+            String h1 = page.selectFirst("h1") == null ? ""
+                    : Objects.requireNonNull(page.selectFirst("h1")).text();
             String description = page.select("meta[name=description]").get(0).attr("content");
 
             UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description);
