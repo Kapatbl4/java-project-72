@@ -17,23 +17,7 @@ import java.util.Optional;
 public class ListOfUrlsPage extends BasePage {
     private List<Url> urlsList;
 
-//    public List<Url> getUrlsList() {
-//        if (urlsList == null) {
-//            try {
-//                setUrlsList();
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//        return urlsList;
-//    }
-//
-//    public void setUrlsList() throws SQLException {
-//        this.urlsList = UrlsRepository.getEntities();
-//    }
-//
-//
-    public Optional<UrlCheck> getLastUrlCheck(long id) {
+    public static Optional<UrlCheck> getLastUrlCheck(long id) {
         try {
             return UrlCheckRepository.getLast(id);
         } catch (SQLException e) {
