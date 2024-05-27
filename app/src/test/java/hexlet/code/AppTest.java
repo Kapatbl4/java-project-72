@@ -9,7 +9,10 @@ import io.javalin.Javalin;
 import io.javalin.testtools.JavalinTest;
 //import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Nested;
 
 import java.io.IOException;
 //import java.nio.file.Files;
@@ -73,7 +76,8 @@ public class AppTest {
                 var response = client.post("/urls", requestBody);
                 assertThat(response.code()).isEqualTo(200);
                 assertThat(response.body().string()).contains("Сайты");
-                assertThat(client.post("/urls", requestBody).body().string()).contains("Бесплатно проверяйте сайты на SEO пригодность");
+                assertThat(client.post("/urls", requestBody).body().string())
+                        .contains("Бесплатно проверяйте сайты на SEO пригодность");
             });
         }
     }
