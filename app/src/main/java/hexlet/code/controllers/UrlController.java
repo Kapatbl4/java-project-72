@@ -84,7 +84,8 @@ public class UrlController {
             String title = page.title();
             String h1 = page.selectFirst("h1") == null ? ""
                     : Objects.requireNonNull(page.selectFirst("h1")).text();
-            String description = page.select("meta[name=description]").get(0).attr("content");
+            String description = page.select("meta[name=description]").first() == null ? "" :
+                    page.select("meta[name=description]").first().attr("content");
 
             UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description);
             urlCheck.setUrlId(url.getId());

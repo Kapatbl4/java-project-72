@@ -6,6 +6,7 @@ import hexlet.code.repository.UrlCheckRepository;
 import hexlet.code.repository.UrlsRepository;
 import hexlet.code.util.NamedRoutes;
 import io.javalin.Javalin;
+import io.javalin.http.HttpStatus;
 import io.javalin.testtools.JavalinTest;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -103,13 +104,15 @@ public class AppTest {
     }
 
     @Test
-    public void testCheckUrl() throws IOException {
-        String mockResponse = Files.readString(Paths.get("src/test/resources/mockTest.html"));
-        mockServer.enqueue(new MockResponse()
-                .setBody(mockResponse));
+    public void testCheckUrl() throws IOException, SQLException {
+        String page = Files.readString(Paths.get("src/test/resources/mockTest.html"));
+        MockResponse mockResponse = new MockResponse().setResponseCode(HttpStatus.OK.getCode()).setBody(page);
+        mockServer.enqueue(mockResponse);
+        mockServer.start();
+        String mockUrl = mockServer.url("/").toString();
+        Url url = new Url(mockUrl);
+        UrlsRepository.save(url);
         JavalinTest.test(app, (server, client) -> {
-            Url url = new Url(mockServer.url("/").toString());
-            UrlsRepository.save(url);
             Url savedUrl = UrlsRepository.findByName(mockServer.url("/").toString()).orElseThrow();
             var response = client.post(NamedRoutes.urlCheckPath(savedUrl.getId()));
             assertThat(response.code()).isEqualTo(200);
