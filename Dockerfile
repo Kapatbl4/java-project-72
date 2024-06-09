@@ -4,8 +4,8 @@ WORKDIR /app
 
 RUN ./gradlew --no-daemon dependencies
 
-COPY app/src src
-COPY app/config config
+COPY app/src app/src
+COPY app/config app/config
 
 RUN ./gradlew --no-daemon build
 
