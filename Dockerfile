@@ -1,15 +1,9 @@
-FROM eclipse-temurin:21-jdk
+FROM gradle:8.6-jdk21
 
 WORKDIR /app
 
-RUN ./gradlew --no-daemon dependencies
+copy /app .
 
-COPY app/src app/src
-COPY app/config app/config
+RUN gradle installDist
 
-RUN ./gradlew --no-daemon build
-
-ENV JAVA_OPTS "-Xmx512M -Xms512M"
-EXPOSE 7070
-
-CMD java -jar build/libs/HexletJavalin-1.0-SNAPSHOT-all.jar
+CMD ./build/install/app/bin/app
