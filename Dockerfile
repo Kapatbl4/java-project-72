@@ -6,4 +6,4 @@ COPY /app .
 
 RUN ./gradlew --no-daemon build
 
-CMD .build/install/app/bin/app
+CMD java -jar build/libs/app-1.0-SNAPSHOT-all.jar
