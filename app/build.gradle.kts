@@ -38,7 +38,7 @@ dependencies {
 
 
         compileOnly("com.konghq:unirest-java-core:4.2.7")
-        compileOnly("org.projectlombok:lombok:1.18.30")
+        compileOnly("org.projectlombok:lombok:1.18.32")
 
 
         testImplementation("org.assertj:assertj-core:3.24.2")
