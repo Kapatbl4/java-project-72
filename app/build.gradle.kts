@@ -34,6 +34,8 @@ dependencies {
         implementation("io.javalin:javalin-rendering:5.6.2")
         implementation("org.jsoup:jsoup:1.17.2")
         implementation("com.konghq:unirest-java:4.0.0-RC2")
+        implementation("org.webjars:bootstrap:5.3.3")
+
 
         compileOnly("com.konghq:unirest-java-core:4.2.7")
         compileOnly("org.projectlombok:lombok:1.18.30")
@@ -47,6 +49,13 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    testLogging {
+        exceptionFormat = TestExceptionFormat.FULL
+        events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
+        // showStackTraces = true
+        // showCauses = true
+        showStandardStreams = true
+    }
     finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
 }
 tasks.jacocoTestReport {

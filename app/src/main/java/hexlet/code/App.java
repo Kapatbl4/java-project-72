@@ -73,10 +73,6 @@ public final class App {
     private static TemplateEngine createTemplateEngine() {
         CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("src/main/jte"));
         return TemplateEngine.create(codeResolver, ContentType.Html);
-//        ClassLoader classLoader = App.class.getClassLoader();
-//        ResourceCodeResolver codeResolver = new ResourceCodeResolver("", classLoader);
-//        TemplateEngine templateEngine = TemplateEngine.create(codeResolver, ContentType.Html);
-//        return templateEngine;
     }
 
     private static String readResourceFile(String fileName) throws IOException {

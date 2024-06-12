@@ -100,14 +100,4 @@ public class UrlController {
         context.redirect(NamedRoutes.urlPath(id));
     }
 
-//    private static String correctUrlFormat(String name) throws MalformedURLException {
-//        URL url = null;
-//        try {
-//            url = new URI(name).toURL();
-//        } catch (URISyntaxException e) {
-//            throw new RuntimeException(e);
-//        }
-//        String port = url.getPort() == -1 ? "" : ":" + url.getPort();
-//        return url.getProtocol() + "://" + url.getHost() + port;
-//    }
 }

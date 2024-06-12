@@ -14,19 +14,4 @@ import java.util.List;
 public class UrlPage extends BasePage {
     private Url url;
     private List<UrlCheck> urlCheckList;
-
-//    public List<UrlCheck> getUrlCheckList() {
-//        if (urlCheckList == null) {
-//            try {
-//                setUrlCheckList();
-//            } catch (SQLException e) {
-//                throw new RuntimeException();
-//            }
-//        }
-//        return urlCheckList;
-//    }
-//
-//    public void setUrlCheckList() throws SQLException {
-//        this.urlCheckList = UrlCheckRepository.getEntitiesByUrlId(url.getId());
-//    }
 }
