@@ -23,15 +23,15 @@ repositories {
 }
 
 dependencies {
-        implementation("com.h2database:h2:2.2.222")
-        implementation("com.zaxxer:HikariCP:5.0.1")
-        implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
-        implementation("org.apache.commons:commons-text:1.10.0")
-        implementation("gg.jte:jte:3.1.0")
-        implementation("org.slf4j:slf4j-simple:2.0.9")
-        implementation("io.javalin:javalin:5.6.2")
-        implementation("io.javalin:javalin-bundle:5.6.2")
-        implementation("io.javalin:javalin-rendering:5.6.2")
+        implementation("com.h2database:h2:2.2.224")
+        implementation("com.zaxxer:HikariCP:5.1.0")
+        implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
+        implementation("org.apache.commons:commons-text:1.11.0")
+        implementation("gg.jte:jte:3.1.12")
+        implementation("org.slf4j:slf4j-simple:2.0.13")
+        implementation("io.javalin:javalin:6.1.3")
+        implementation("io.javalin:javalin-bundle:6.1.3")
+        implementation("io.javalin:javalin-rendering:6.1.3")
         implementation("org.jsoup:jsoup:1.17.2")
         implementation("com.konghq:unirest-java:4.0.0-RC2")
         implementation("org.webjars:bootstrap:5.3.3")
@@ -41,8 +41,8 @@ dependencies {
         compileOnly("org.projectlombok:lombok:1.18.32")
 
 
-        testImplementation("org.assertj:assertj-core:3.24.2")
-        testImplementation(platform("org.junit:junit-bom:5.10.0"))
+        testImplementation("org.assertj:assertj-core:3.25.3")
+        testImplementation(platform("org.junit:junit-bom:5.10.1"))
         testImplementation("org.junit.jupiter:junit-jupiter")
         testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
 }

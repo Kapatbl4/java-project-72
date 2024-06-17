@@ -52,14 +52,13 @@ public final class App {
         BaseRepository.dataSource = dataSource;
 
         var app = Javalin.create(config -> {
-            config.plugins.enableDevLogging();
+            config.bundledPlugins.enableDevLogging();
+            config.fileRenderer(new JavalinJte(createTemplateEngine()));
         });
 
         app.before(ctx -> {
             ctx.contentType("text/html; charset=utf-8");
         });
-
-        JavalinJte.init(createTemplateEngine());
 
         app.get(NamedRoutes.rootPath(), RootController::welcome);
         app.get(NamedRoutes.urlsPath(), UrlController::listUrls);
@@ -71,7 +70,7 @@ public final class App {
     }
 
     private static TemplateEngine createTemplateEngine() {
-        CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("src/main/jte"));
+        CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("src/main/resources/jte"));
         return TemplateEngine.create(codeResolver, ContentType.Html);
     }
 
