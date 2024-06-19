@@ -2,6 +2,7 @@ package hexlet.code;
 
 import gg.jte.CodeResolver;
 import gg.jte.resolve.DirectoryCodeResolver;
+import gg.jte.resolve.ResourceCodeResolver;
 import hexlet.code.controllers.RootController;
 import hexlet.code.controllers.UrlController;
 
@@ -70,7 +71,8 @@ public final class App {
     }
 
     private static TemplateEngine createTemplateEngine() {
-        CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("src/main/resources/jte"));
+        ClassLoader classLoader = App.class.getClassLoader();
+        ResourceCodeResolver codeResolver = new ResourceCodeResolver("jte", classLoader);
         return TemplateEngine.create(codeResolver, ContentType.Html);
     }
 
