@@ -40,9 +40,7 @@ dependencies {
         testImplementation ("com.squareup.okhttp3:mockwebserver:4.12.0")
         implementation ("org.jsoup:jsoup:1.17.2")
         implementation ("com.konghq:unirest-java:3.13.0")
-
-        annotationProcessor ("org.projectlombok:lombok:1.18.32")
-        compileOnly("org.projectlombok:lombok:1.18.32")
+     compileOnly("org.projectlombok:lombok:1.18.32")
 
         compileOnly("com.konghq:unirest-java-core:4.2.7")
 
