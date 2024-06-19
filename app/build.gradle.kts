@@ -23,7 +23,6 @@ repositories {
 }
 
 dependencies {
-    dependencies {
         implementation("com.h2database:h2:2.2.224")
         implementation("org.postgresql:postgresql:42.7.1")
         implementation("com.zaxxer:HikariCP:5.1.0")
@@ -41,11 +40,9 @@ dependencies {
         testImplementation ("com.squareup.okhttp3:mockwebserver:4.12.0")
         implementation ("org.jsoup:jsoup:1.17.2")
         implementation ("com.konghq:unirest-java:3.13.0")
-    }
-
+        implementation("org.projectlombok:lombok:1.18.28")
 
         compileOnly("com.konghq:unirest-java-core:4.2.7")
-        compileOnly("org.projectlombok:lombok:1.18.32")
 
 }
 
