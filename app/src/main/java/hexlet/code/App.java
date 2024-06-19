@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import gg.jte.CodeResolver;
-import gg.jte.resolve.DirectoryCodeResolver;
 import gg.jte.resolve.ResourceCodeResolver;
 import hexlet.code.controllers.RootController;
 import hexlet.code.controllers.UrlController;
@@ -20,7 +18,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.stream.Collectors;
 
