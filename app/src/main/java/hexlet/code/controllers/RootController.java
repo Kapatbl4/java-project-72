@@ -10,6 +10,6 @@ public class RootController {
         var page = new MainPage();
         page.setFlash(context.consumeSessionAttribute("flash"));
         page.setFlashType(context.consumeSessionAttribute("flashType"));
-        context.render("MainPage.jte", Collections.singletonMap("page", page));
+        context.render("mainPage.jte", Collections.singletonMap("page", page));
     }
 }

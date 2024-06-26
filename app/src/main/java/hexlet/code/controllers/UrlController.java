@@ -55,7 +55,7 @@ public class UrlController {
         page.setFlash(context.consumeSessionAttribute("flash"));
         page.setFlashType(context.consumeSessionAttribute("flashType"));
         page.setUrlsList(urlsList);
-        context.render("ListOfUrls.jte", Collections.singletonMap("page", page));
+        context.render("listOfUrls.jte", Collections.singletonMap("page", page));
     }
 
     public static void showUrl(Context context) throws SQLException {
@@ -69,7 +69,7 @@ public class UrlController {
         page.setFlashType(context.consumeSessionAttribute("flashType"));
         page.setUrlCheckList(urlChecks);
 
-        context.render("UrlInfo.jte", Collections.singletonMap("page", page));
+        context.render("urlInfo.jte", Collections.singletonMap("page", page));
     }
 
     public static void checkUrl(Context context) throws SQLException {
