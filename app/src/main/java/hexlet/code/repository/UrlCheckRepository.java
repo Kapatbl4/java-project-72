@@ -18,8 +18,8 @@ public class UrlCheckRepository extends BaseRepository {
              var preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setLong(1, urlCheck.getUrlId());
             preparedStatement.setInt(2, urlCheck.getStatusCode());
-            preparedStatement.setString(3, urlCheck.getH1());
-            preparedStatement.setString(4, urlCheck.getTitle());
+            preparedStatement.setString(3, urlCheck.getTitle());
+            preparedStatement.setString(4, urlCheck.getH1());
             preparedStatement.setString(5, urlCheck.getDescription());
             preparedStatement.setTimestamp(6, datetime);
             preparedStatement.executeUpdate();
