@@ -26,15 +26,15 @@ content = @`<head>
                     </thead>
                     <tbody>
                     @for(var url : page.getUrlsList())
+                        !{var urlCheck = page.getChecks().get(url.getId());}
                         <tr>
                             <td>${url.getId()}</td>
                             <td>
                                 <a href="${NamedRoutes.urlPath(url.getId())}">${url.getName()}</a>
                             </td>
-                            <td>${page.getLastUrlCheck(url.getId()).isEmpty() ? "" :
-                                new SimpleDateFormat("dd/MM/yyyy HH:mm").format(page.getLastUrlCheck(url.getId()).get().getCreatedAt())}</td>
-                            <td>${page.getLastUrlCheck(url.getId()).isEmpty() ? "" :
-                                String.valueOf(page.getLastUrlCheck(url.getId()).get().getStatusCode())}</td>
+                            <td>${urlCheck == null ? "" : new SimpleDateFormat("dd/MM/yyyy HH:mm")
+                                    .format(urlCheck.getCreatedAt())}</td>
+                            <td>${urlCheck == null ? "" : String.valueOf(urlCheck.getStatusCode())}</td>
                         </tr>
                     @endfor
                     </tbody>

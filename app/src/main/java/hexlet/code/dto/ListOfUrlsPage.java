@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Getter
@@ -16,12 +17,9 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ListOfUrlsPage extends BasePage {
     private List<Url> urlsList;
+    private Map<Long, UrlCheck> checks;
 
-    public static Optional<UrlCheck> getLastUrlCheck(long id) {
-        try {
-            return UrlCheckRepository.getLast(id);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public static Optional<UrlCheck> getLastUrlCheck(long id) throws SQLException {
+        return UrlCheckRepository.getLast(id);
     }
 }

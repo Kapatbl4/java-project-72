@@ -19,6 +19,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class UrlController {
@@ -51,7 +52,8 @@ public class UrlController {
 
     public static void listUrls(Context context) throws SQLException {
         List<Url> urlsList = UrlsRepository.getEntities();
-        var page = new ListOfUrlsPage(urlsList);
+        Map<Long, UrlCheck> checks = UrlCheckRepository.getLastUrlChecks();
+        var page = new ListOfUrlsPage(urlsList, checks);
         page.setFlash(context.consumeSessionAttribute("flash"));
         page.setFlashType(context.consumeSessionAttribute("flashType"));
         page.setUrlsList(urlsList);
