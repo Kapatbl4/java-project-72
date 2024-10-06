@@ -28,7 +28,7 @@ public class UrlCheckRepository extends BaseRepository {
             var generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
                 urlCheck.setId(generatedKeys.getLong(1));
-                urlCheck.setCreatedAt(datetime);
+                urlCheck.setCreatedAt(datetime.toLocalDateTime());
             } else {
                 throw new SQLException("DB have not returned an id after saving an entity");
             }
@@ -50,7 +50,7 @@ public class UrlCheckRepository extends BaseRepository {
                 var createdAt = resultSet.getTimestamp("created_at");
                 var urlCheck = new UrlCheck(statusCode, title, h1, description);
                 urlCheck.setUrlId(urlId);
-                urlCheck.setCreatedAt(createdAt);
+                urlCheck.setCreatedAt(createdAt.toLocalDateTime());
 
                 return Optional.of(urlCheck);
             }
@@ -76,7 +76,7 @@ public class UrlCheckRepository extends BaseRepository {
                 var urlCheck = new UrlCheck(statusCode, title, h1, description);
                 urlCheck.setId(urlCheckId);
                 urlCheck.setUrlId(urlId);
-                urlCheck.setCreatedAt(createdAt);
+                urlCheck.setCreatedAt(createdAt.toLocalDateTime());
                 result.add(urlCheck);
             }
             return result;
@@ -100,7 +100,7 @@ public class UrlCheckRepository extends BaseRepository {
                 var check = new UrlCheck(statusCode, title, h1, description);
                 check.setId(id);
                 check.setUrlId(urlId);
-                check.setCreatedAt(createdAt);
+                check.setCreatedAt(createdAt.toLocalDateTime());
                 result.put(urlId, check);
             }
             return result;

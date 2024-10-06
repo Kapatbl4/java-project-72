@@ -22,7 +22,7 @@ public class UrlsRepository extends BaseRepository {
             var generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
                 url.setId(generatedKeys.getLong(1));
-                url.setCreatedAt(datetime);
+                url.setCreatedAt(datetime.toLocalDateTime());
             } else {
                 throw new SQLException("DB have not returned an id after saving an entity");
             }
@@ -40,7 +40,7 @@ public class UrlsRepository extends BaseRepository {
                 var createdAt = resultSet.getTimestamp("created_at");
                 var url = new Url(name);
                 url.setId(id);
-                url.setCreatedAt(createdAt);
+                url.setCreatedAt(createdAt.toLocalDateTime());
 
                 return Optional.of(url);
             }
@@ -60,7 +60,7 @@ public class UrlsRepository extends BaseRepository {
                 var id = resultSet.getLong("id");
                 var url = new Url(name);
                 url.setId(id);
-                url.setCreatedAt(createdAt);
+                url.setCreatedAt(createdAt.toLocalDateTime());
 
                 return Optional.of(url);
             }
@@ -80,7 +80,7 @@ public class UrlsRepository extends BaseRepository {
                 var urlId = resultSet.getLong("id");
                 var url = new Url(name);
                 url.setId(id);
-                url.setCreatedAt(createdAt);
+                url.setCreatedAt(createdAt.toLocalDateTime());
 
                 return Optional.of(url);
             }
@@ -100,7 +100,7 @@ public class UrlsRepository extends BaseRepository {
                 var createdAt = resultSet.getTimestamp("created_at");
                 var url = new Url(name);
                 url.setId(id);
-                url.setCreatedAt(createdAt);
+                url.setCreatedAt(createdAt.toLocalDateTime());
                 result.add(url);
             }
             return result;

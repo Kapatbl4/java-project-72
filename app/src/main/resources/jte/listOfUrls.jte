@@ -1,6 +1,6 @@
 @import hexlet.code.dto.ListOfUrlsPage
 @import hexlet.code.util.NamedRoutes
-@import java.text.SimpleDateFormat
+@import java.time.format.DateTimeFormatter
 
 @param ListOfUrlsPage page
 
@@ -32,7 +32,7 @@ content = @`<head>
                             <td>
                                 <a href="${NamedRoutes.urlPath(url.getId())}">${url.getName()}</a>
                             </td>
-                            <td>${urlCheck == null ? "" : new SimpleDateFormat("dd/MM/yyyy HH:mm")
+                            <td>${urlCheck == null ? "" : DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
                                     .format(urlCheck.getCreatedAt())}</td>
                             <td>${urlCheck == null ? "" : String.valueOf(urlCheck.getStatusCode())}</td>
                         </tr>
